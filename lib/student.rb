@@ -14,7 +14,7 @@ class Student < InteractiveRecord
     options.each do |property, value|
       self.send("#{property}=", value)
     end
-      self.column_names.each do |col_name|
+      self.class.column_names.each do |col_name|
         attr_accessor col_name.to_sym
     end
   end
